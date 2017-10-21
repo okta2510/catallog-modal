@@ -1,0 +1,293 @@
+$primary : red;
+$secondary : blue;
+$grey : #EEEEEE;
+$yellow : #FBE55A;
+
+/*helper*/
+.list-unstyled {
+  list-style: none;
+  padding-left: 0;
+}
+.text-sm {
+  font-size: 13px;
+  line-height: 20px;
+}
+.text-xs {
+  font-size: 11px;
+  line-height: 18px;
+}
+.clear {
+  &:after,&:before {
+    clear: both;
+    display: block;
+  }
+}
+.text-right {
+  text-align: right!important;
+}
+.text-left {
+  text-align: left!important;
+}
+.text-center {
+  text-align:center!important;
+}
+.noscroll{
+  overflow: hidden!important;
+}
+.nofont{
+  font-size: 0;
+}
+.fontinit{
+  font-size: initial;
+}
+.hidden {
+  display: none!important;
+}
+.c-pointer {
+  cursor: pointer;
+}
+.c-hover {
+  &:hover,&:focus {
+    background-color:$grey;
+      svg path{
+        fill: lighten(#000,30%);
+      }
+  }
+  &:active {
+    background-color: darken($grey,3%);
+  }
+  &._dark {
+    &:hover,&:focus {
+      background-color: fade-out(#000, 0.2);
+        svg path{
+          fill: lighten(#000,30%);
+        }
+    }
+    &:active {
+      background-color: fade-out(#000, 0.1);
+    }
+  }
+}
+/*<mixin>*/
+@mixin fix-bg($a,$b,$c){
+  background-repeat: $a;
+  background-position: $b;
+  background-attachment: $c;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+// no-repeat,center,absolute
+
+@mixin font($a,$b){
+  font-size: $a+px;
+  line-height: $b+px;
+}
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius ;
+	-moz-border-radius: $radius ;
+	-ms-border-radius: $radius ;
+	border-radius: $radius ;
+}
+@mixin box-shadow($shadow) {
+	-webkit-box-shadow: $shadow;
+	box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+}
+@mixin text-shadow($shadow) {
+  text-shadow: $shadow;
+}
+
+@mixin transition($set) {
+	-webkit-transition: $set;
+	-moz-transition: $set;
+	-ms-transition: $set;
+	-o-transition: $set;
+	transition: $set;
+}
+
+@mixin transform($set) {
+  -webkit-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  -o-transform: scale(1.03);
+  transform: scale(1.03);
+}
+//all 0.5s ease-in
+
+@mixin transform($set) {
+  -moz-transform: $set;
+  -webkit-transform: $set;
+  -o-transform: $set;
+  -ms-transform: $set;
+  transform: $set;
+}
+
+@mixin animation($a,$b) {
+  -webkit-animation-name: $a;
+  -webkit-animation-duration: $b;
+  animation-name: $a;
+  animation-duration: $b;
+}
+// fade,1.5s
+
+@-webkit-keyframes fade {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+/*<mixin>*/
+
+
+
+/*<reset-class>*/
+input,button,.form-control,.btn{
+  &:hover,&:focus,&:focus:active{
+    outline: none;
+    @include box-shadow(none);
+  }
+}
+/*</reset-class>*/
+
+/*<helper-class>*/
+.v-mid{
+  vertical-align: middle!important;
+}
+.v-top{
+  vertical-align: top!important;
+}
+.v-bow{
+  vertical-align: bottom!important;
+}
+.playfair{
+  font-family: "Playfair Display",Helvetica Neue,Arial,sans-serif;
+}
+.bg-dark {
+  background-color: darken(#fff, 80%);
+  color:#fff;
+}
+
+.form-control{
+  font-weight: 400;
+    &::-webkit-input-placeholder {
+     color: #9B9B9B;
+    }
+      &:-moz-placeholder { /* Firefox 18- */
+     color: #9B9B9B;
+    }
+      &::-moz-placeholder {  /* Firefox 19+ */
+     color: #9B9B9B;
+    }
+    &:-ms-input-placeholder {
+     color: #9B9B9B;
+    }
+}
+.capsme{
+  text-transform: capitalize;
+}
+.upperme{
+  text-transform: uppercase;
+}
+.center-block {
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+.d-block{
+  display: block!important;
+}
+.d-iblock{
+  display: inline-block!important;
+}
+
+.y-space{
+  &._pad30{
+    padding-top:30px;
+    padding-bottom:30px;
+  }
+  &._pad50{
+    padding-top:50px;
+    padding-bottom:50px;
+  }
+  &._pad100{
+    padding-top:100px;
+    padding-bottom:100px;
+  }
+}
+
+.nopad{
+  padding: 0!important;
+}
+
+.mb-0 {
+  margin-bottom: 0px!important;
+}
+.mb-5 {
+  margin-bottom: 5px!important;
+}
+.mb-15 {
+  margin-bottom: 15px!important;
+}
+.mb-10 {
+  margin-bottom: 10px!important;
+}
+.mb-20 {
+  margin-bottom: 20px!important;
+}
+.mb-30 {
+  margin-bottom: 30px!important;
+}
+.mb-50 {
+  margin-bottom: 50px!important;
+}
+.mb-70 {
+  margin-bottom: 70px!important;
+}
+.mb-100 {
+  margin-bottom: 100px!important;
+}
+
+.upperme {
+  text-transform: uppercase;
+}
+a .title{
+  color:#000;
+}
+
+.title-h {
+  margin: initial;
+}
+.tag-title{
+  ._title{
+    margin: initial;
+    font-weight: normal;
+  }
+  &._section{
+    ._title{
+      font-weight: bold;
+      color:darken($primary,10%);
+      @include font(50,40);
+      margin-top: 0;
+      @extend .playfair;
+    }
+    ._sub{
+      color:$secondary;
+      @include font(28,40);
+      font-weight: 300;
+      font-style: italic;
+    }
+  }
+}
+.table-view {
+  display: table;
+  width:100%;
+
+    .table-cell {
+      display: table-cell;
+      float: none;
+    }
+}

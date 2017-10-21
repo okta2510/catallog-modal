@@ -1,0 +1,116 @@
+.catalogSlide {
+  @include animation(fade,1s);
+}
+
+.catalog-tile {
+  position: relative;
+  display: block;
+  padding: 20px 0;
+  background-color: #fff;
+  @include border-radius(5px);
+    &.no-hover {
+      &:hover,&:focus {
+        @include box-shadow(none);
+      }
+    }
+    &:hover,&:focus {
+      @include box-shadow(1px 2px 15px 1px  fade-out(#000,0.9));
+    }
+    .media {
+      position: relative;
+      height: 200px;
+      overflow:hidden;
+      text-align: center;
+      img{
+        width: 100%;
+        min-height: 100%;
+      }
+    }
+    .inner-space {
+      // font-size: 0;
+      padding:0 20px;
+    }
+    .desc {
+      font-size: initial;
+        p {
+          margin: initial;
+          font-size: 13px;
+          @extend .font-light;
+        }
+    }
+}
+
+.catalog-detail {
+  &>p {
+    margin: initial;
+  }
+  .price {
+    font-size: 20px;
+    line-height: 27px;
+  }
+  .desc {
+    color:fade-out(#000, 0.6);
+    font-size: 16px;
+    line-height: 23px;
+  }
+}
+
+.badge {
+  background-color: $yellow;
+  padding: 0px 20px 0px 10px;
+  position: absolute;
+  left: 0;
+  top:0;
+  font-size: 12px;
+  height: 25px;
+  line-height: 28px;
+  z-index: 1;
+  @include border-radius(0 30px 30px 0);
+    &.relative {
+      top:initial;
+      display: inline-block;
+    }
+}
+
+.catalog-actions {
+  // font-size: 0;
+  border:solid 1px #EEEEEE;
+  display: inline-block;
+  @include border-radius(30px);
+  overflow: hidden;
+
+    &._dark {
+      background-color: fade-out(#000, 0.2);
+      color:#fff;
+      border-color: fade-out(#000, 0.2);
+      &>.co-box+.co-box {
+        border-color: fade-out(#fff, 0.6);
+      }
+    }
+
+    &>.co-box{
+      font-size: 12px;
+      line-height: 16px;
+      padding: 8px 12px;
+      height: 30px;
+      vertical-align: middle;
+      display: inline-block;
+        &+.co-box {
+          border-left: solid 1px #EEEEEE;
+        }
+        &>img,&>svg{
+          height: 12px;
+          display: inline-block;
+          vertical-align: text-top;
+        }
+    }
+
+    &.x-lg{
+      &>.co-box {
+        font-size: 13px;
+        line-height: 20px;
+        padding: 10px 13px;
+        height: 35px;
+      }
+    }
+}
