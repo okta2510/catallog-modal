@@ -103,6 +103,12 @@
           display: inline-block;
           vertical-align: text-top;
         }
+        &>.icon-img {
+          height: 14px;
+          width: 14px;
+          @include fix-bg(no-repeat,center,absolute);
+          background-size: 100% auto;
+        }
     }
 
     &.x-lg{

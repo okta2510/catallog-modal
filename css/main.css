@@ -401,6 +401,17 @@ a .title {
       height: 12px;
       display: inline-block;
       vertical-align: text-top; }
+    .catalog-actions > .co-box > .icon-img {
+      height: 14px;
+      width: 14px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: absolute;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-size: 100% auto; }
   .catalog-actions.x-lg > .co-box {
     font-size: 13px;
     line-height: 20px;
@@ -487,7 +498,7 @@ a .title {
         height: 3px;
         background-color: #FBE55A;
         display: block;
-        bottom: -1px; }
+        bottom: -2px; }
     .panel-option .tab-head span + span {
       margin-left: 15px; }
 .panel-option .tab-body .tab-pane {
